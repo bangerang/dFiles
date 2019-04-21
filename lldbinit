@@ -7,3 +7,8 @@ command regex getcls 's/(([0-9]|\$|\@|\[).*)/cpo [%1 class]/' 's/(.+)/expression
 settings set target.x86-disassembly-flavor intel
 settings set target.skip-prologue false
 command alias -H "Print value in ObjC context in hexadecimal" -h "Print in hex" -- cpx expression -f x -l objc --
+command regex ls 's/(.+)/po [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"%1" error:nil]/''
+command regex dump_stuff "s/(.+)/image lookup -rn '\+\[\w+(\(\w+\))?\ \w+\]$' %1 /
+command regex ivars 's/(.+)/expression -lobjc -O -- [%1 _ivarDescription]/
+command regex lmethods 's/(.+)/expression -lobjc -O -- [%1 _methodDescription]/
+command regex methods 's/(.+)/expression -lobjc -O -- [%1 _shortMethodDescription]/
