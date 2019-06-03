@@ -1,7 +1,5 @@
 command script import /Users/johanthorell/Documents/Development/OwnStuff/lldb_commands/dslldb.py
 command script import /usr/local/opt/chisel/libexec/fblldb.py
-command alias -H "Yay_Autolayout will get the root view and recursively dump all the subviews and their frames" -h "Recursively dump views" -- Yay_Autolayout expression -l objc -O -- [[[[[UIApplication sharedApplication] keyWindow] rootViewController] view] recursiveDescription]
-command alias -H "Will print NSObject info an adress even if Swift context" --  cpo expression -l objc -O --
 command regex rlook 's/(.+)/image lookup -rn %1/'
 command regex getcls 's/(([0-9]|\$|\@|\[).*)/cpo [%1 class]/' 's/(.+)/expression -l swift -O -- type(of: %1)/
 settings set target.x86-disassembly-flavor intel
