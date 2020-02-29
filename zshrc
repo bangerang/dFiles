@@ -91,3 +91,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# append
+path+=('/usr/local/bin')
+# or prepend
+path=('/usr/local/bin' $path)
+# export to sub-processes (make it inherited by child processes)
+export PATH
